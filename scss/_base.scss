@@ -1,0 +1,36 @@
+@use 'variables' as *;
+@use 'sass:map';
+
+:root {
+  @each $color, $value in $colors {
+    --#{$color}: #{$value};
+  }
+}
+
+body {
+  font-family: $ff-body;
+  font-size: 1.125rem;
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: $ff-headings;
+}
+
+@each $heading, $heading-details in $heading-fonts {
+  $i: index($heading-fonts, $heading $heading-details);
+  @debug $i;
+
+  h#{$i} {
+    font-size: #{map.get($heading-details, 'size')};
+    font-weight: #{map.get($heading-details, 'weight')};
+    line-height: #{map.get($heading-details, 'lineheight')};
+  }
+}
+
+header {
+  background-color: $clr-hero-bg;
+}

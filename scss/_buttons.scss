@@ -1,0 +1,39 @@
+@use 'sass:map';
+@use './variables' as *;
+
+a.btn {
+  display: inline-block;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: color $animation-duration $animation-easing-function,
+    background-color $animation-duration $animation-easing-function;
+
+  &-primary {
+    background-color: #{$clr-button-bg};
+    color: #{$clr-button};
+    border: 2px solid #{$clr-button};
+
+    &:hover {
+      background-color: #{$clr-button};
+      color: #{$clr-button-bg};
+      border-color: #{$clr-button-bg};
+      transition: color $animation-duration $animation-easing-function,
+        background-color $animation-duration $animation-easing-function;
+    }
+  }
+
+  &-secondary {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid transparent;
+    text-decoration: underline;
+    text-underline-offset: 10px;
+    text-decoration-color: #{$clr-button-bg};
+
+    &:hover {
+      color: #{$clr-button-bg};
+      transition: color $animation-duration $animation-easing-function,
+        background-color $animation-duration $animation-easing-function;
+    }
+  }
+}

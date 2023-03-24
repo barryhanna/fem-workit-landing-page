@@ -1,0 +1,53 @@
+$colors: (
+  'purple': hsl(273 85% 13%),
+  'green': hsl(150 100% 63%),
+  'purple-light': hsl(271 12% 34%),
+  'purple-white': hsl(276 100% 99%),
+  'white': hsl(0 0% 100%),
+);
+
+$ff-body: 'Manrope', sans-serif;
+$ff-headings: 'Frances 144', serif;
+
+$lineheight-body: 1.77;
+$fs-body: 1.125rem;
+
+$heading-large-fs: 5rem;
+$lineheight-large: 1;
+$heading-large-weight: 500;
+
+$animation-duration: 250ms;
+$animation-easing-function: ease-in-out;
+
+$clr-hero-bg: #{map-get(
+    $map: $colors,
+    $key: 'purple',
+  )};
+
+$clr-button: #{map-get(
+    $map: $colors,
+    $key: 'purple',
+  )};
+
+$clr-button-bg: #{map-get(
+    $map: $colors,
+    $key: 'green',
+  )};
+
+$heading-fonts: (
+  'large': (
+    'size': 5rem,
+    'weight': 500,
+    'lineheight': 1,
+  ),
+  'medium': (
+    'size': 3.5rem,
+    'weight': 500,
+    'lineheight': 1.14,
+  ),
+  'small': (
+    'size': 2rem,
+    'weight': 500,
+    'lineheight': 1.25,
+  ),
+);
