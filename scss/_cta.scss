@@ -1,4 +1,14 @@
-.founder-img {
+.cta-img {
+  position: relative;
   width: 477px;
   aspect-ratio: 1;
+  bottom: -16em;
+  left: -5em;
+  z-index: -1;
+}
+
+.cta-message {
+  width: 70%;
+  margin-left: auto;
+  padding: 3.3rem;
 }

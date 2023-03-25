@@ -4,6 +4,7 @@
 a.btn {
   display: inline-block;
   padding: 0.5em 1em;
+  font-weight: bold;
   text-decoration: none;
   transition: color $animation-duration $animation-easing-function,
     background-color $animation-duration $animation-easing-function;

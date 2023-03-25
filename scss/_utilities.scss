@@ -1,0 +1,18 @@
+@use './variables' as *;
+
+.flow > * + * {
+  margin-top: $spacer;
+}
+
+.flow\:smallest > * + * {
+  margin-top: calc($spacer / 4);
+}
+
+.flow\:small > * + * {
+  margin-top: calc($spacer / 2);
+}
+
+.container {
+  max-width: 1000px;
+  margin-inline: auto;
+}

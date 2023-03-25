@@ -119,8 +119,26 @@ h3 {
   line-height: 1.25;
 }
 
+header,
+section,
+main,
+footer {
+  padding-block: 4rem;
+}
+
 header {
   background-color: #24053d;
+  color: var(--white);
+  clip-path: circle(90vh at 50% -20vh);
+}
+
+.bg-dark {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.bg-light {
+  background-color: var(--purple-white);
 }
 
 nav ul {
@@ -130,9 +148,65 @@ nav ul {
   margin: 0;
 }
 
+.hero {
+  --img-height: 441px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-block: 4rem;
+  background-image: url("../assets/images/bg-pattern-1.svg"), url("../assets/images/bg-pattern-2.svg");
+  background-position: -13% 50%, 105% 50%;
+  background-repeat: no-repeat;
+}
+.hero h1 {
+  max-width: 13ch;
+  margin-inline: auto;
+}
+.hero em {
+  font-style: normal;
+  text-decoration: underline;
+  text-decoration-color: #42ffa1;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 8px;
+}
+.hero__img {
+  top: 50%;
+  left: 0;
+  width: 767px;
+  height: var(--img-height);
+}
+
+.features-list {
+  display: flex;
+  position: relative;
+  gap: 2em;
+}
+.features-list li::marker {
+  content: "";
+}
+
+.feature-item__counter {
+  font-family: "Frances 144", serif;
+  font-weight: bold;
+  font-size: 1.625rem;
+  display: grid;
+  place-content: center;
+  width: 60px;
+  height: 60px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  color: var(--purple);
+  text-align: center;
+  margin-inline: auto;
+  margin-bottom: 1em;
+}
+
 a.btn {
   display: inline-block;
   padding: 0.5em 1em;
+  font-weight: bold;
   text-decoration: none;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
@@ -160,9 +234,50 @@ a.btn-secondary:hover {
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
-.founder-img {
+.cta-img {
+  position: relative;
   width: 477px;
   aspect-ratio: 1;
+  bottom: -16em;
+  left: -5em;
+  z-index: -1;
+}
+
+.cta-message {
+  width: 70%;
+  margin-left: auto;
+  padding: 3.3rem;
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+.social-links > * {
+  height: 20px;
+  aspect-ratio: 1;
+}
+
+footer .container > * {
+  margin-inline: auto;
+}
+
+.flow > * + * {
+  margin-top: 4rem;
+}
+
+.flow\:smallest > * + * {
+  margin-top: 1rem;
+}
+
+.flow\:small > * + * {
+  margin-top: 2rem;
+}
+
+.container {
+  max-width: 1000px;
+  margin-inline: auto;
 }
 
 /*# sourceMappingURL=style.css.map */

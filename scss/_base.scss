@@ -31,6 +31,24 @@ h4 {
   }
 }
 
+header,
+section,
+main,
+footer {
+  padding-block: $spacer;
+}
+
 header {
   background-color: $clr-hero-bg;
+  color: var(--white);
+  clip-path: circle(90vh at 50% -20vh);
+}
+
+.bg-dark {
+  background-color: var(--purple);
+  color: var(--white);
+}
+
+.bg-light {
+  background-color: var(--purple-white);
 }

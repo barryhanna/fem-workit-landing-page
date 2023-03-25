@@ -19,6 +19,8 @@ $heading-large-weight: 500;
 $animation-duration: 250ms;
 $animation-easing-function: ease-in-out;
 
+$spacer: 4rem;
+
 $clr-hero-bg: #{map-get(
     $map: $colors,
     $key: 'purple',

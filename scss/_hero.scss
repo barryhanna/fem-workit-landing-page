@@ -1,1 +1,36 @@
 @use './variables' as *;
+
+.hero {
+  --img-height: 441px;
+  display: flex;
+
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-block: 4rem;
+  background-image: url('../assets/images/bg-pattern-1.svg'),
+    url('../assets/images/bg-pattern-2.svg');
+  background-position: -13% 50%, 105% 50%;
+  background-repeat: no-repeat;
+
+  h1 {
+    max-width: 13ch;
+    margin-inline: auto;
+  }
+
+  em {
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-color: $clr-button-bg;
+    text-decoration-thickness: 4px;
+    text-underline-offset: 8px;
+  }
+
+  &__img {
+    top: 50%;
+    left: 0;
+    width: 767px;
+    height: var(--img-height);
+  }
+}
