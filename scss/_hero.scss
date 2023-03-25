@@ -1,9 +1,8 @@
 @use './variables' as *;
 
 .hero {
-  --img-height: 441px;
   display: flex;
-
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -28,9 +27,11 @@
   }
 
   &__img {
-    top: 50%;
-    left: 0;
-    width: 767px;
-    height: var(--img-height);
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100vh / 2);
+    z-index: 1;
   }
 }

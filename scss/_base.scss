@@ -22,7 +22,6 @@ h4 {
 
 @each $heading, $heading-details in $heading-fonts {
   $i: index($heading-fonts, $heading $heading-details);
-  @debug $i;
 
   h#{$i} {
     font-size: #{map.get($heading-details, 'size')};
@@ -33,7 +32,6 @@ h4 {
 
 header,
 section,
-main,
 footer {
   padding-block: $spacer;
 }
@@ -41,7 +39,7 @@ footer {
 header {
   background-color: $clr-hero-bg;
   color: var(--white);
-  clip-path: circle(90vh at 50% -20vh);
+  clip-path: circle(120% at 50% -20%);
 }
 
 .bg-dark {

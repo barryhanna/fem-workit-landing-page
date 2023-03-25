@@ -62,10 +62,9 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
-*::before,
-*::after {
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -81,11 +80,11 @@ select {
   src: url(./assets/fonts/manrope/Manrope-VariableFont_wght.ttf) format("truetype");
 }
 :root {
-  --purple: #24053d;
-  --green: #42ffa1;
-  --purple-light: #574c61;
-  --purple-white: #fdfaff;
-  --white: white;
+  --purple: hsl(273, 85%, 13%);
+  --green: hsl(150, 100%, 63%);
+  --purple-light: hsl(271, 12%, 34%);
+  --purple-white: hsl(276, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
 }
 
 body {
@@ -121,15 +120,14 @@ h3 {
 
 header,
 section,
-main,
 footer {
   padding-block: 4rem;
 }
 
 header {
-  background-color: #24053d;
+  background-color: hsl(273, 85%, 13%);
   color: var(--white);
-  clip-path: circle(90vh at 50% -20vh);
+  clip-path: circle(120% at 50% -20%);
 }
 
 .bg-dark {
@@ -149,8 +147,8 @@ nav ul {
 }
 
 .hero {
-  --img-height: 441px;
   display: flex;
+  position: relative;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -167,21 +165,25 @@ nav ul {
 .hero em {
   font-style: normal;
   text-decoration: underline;
-  text-decoration-color: #42ffa1;
+  text-decoration-color: hsl(150, 100%, 63%);
   text-decoration-thickness: 4px;
   text-underline-offset: 8px;
 }
 .hero__img {
-  top: 50%;
-  left: 0;
-  width: 767px;
-  height: var(--img-height);
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50vh;
+  z-index: 1;
 }
 
 .features-list {
   display: flex;
   position: relative;
+  justify-content: space-between;
   gap: 2em;
+  margin-top: 2em;
 }
 .features-list li::marker {
   content: "";
@@ -211,14 +213,14 @@ a.btn {
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 a.btn-primary {
-  background-color: #42ffa1;
-  color: #24053d;
-  border: 2px solid #24053d;
+  background-color: hsl(150, 100%, 63%);
+  color: hsl(273, 85%, 13%);
+  border: 2px solid hsl(273, 85%, 13%);
 }
 a.btn-primary:hover {
-  background-color: #24053d;
-  color: #42ffa1;
-  border-color: #42ffa1;
+  background-color: hsl(273, 85%, 13%);
+  color: hsl(150, 100%, 63%);
+  border-color: hsl(150, 100%, 63%);
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 a.btn-secondary {
@@ -227,25 +229,29 @@ a.btn-secondary {
   border: 2px solid transparent;
   text-decoration: underline;
   text-underline-offset: 10px;
-  text-decoration-color: #42ffa1;
+  text-decoration-color: hsl(150, 100%, 63%);
 }
 a.btn-secondary:hover {
-  color: #42ffa1;
+  color: hsl(150, 100%, 63%);
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
-.cta-img {
+.cta .container {
+  display: flex;
   position: relative;
+}
+
+.cta-img {
   width: 477px;
   aspect-ratio: 1;
-  bottom: -16em;
-  left: -5em;
   z-index: -1;
 }
 
 .cta-message {
-  width: 70%;
-  margin-left: auto;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 60%;
   padding: 3.3rem;
 }
 

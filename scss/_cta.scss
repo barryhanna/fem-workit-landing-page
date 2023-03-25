@@ -1,14 +1,20 @@
+.cta {
+  .container {
+    display: flex;
+    position: relative;
+  }
+}
+
 .cta-img {
-  position: relative;
   width: 477px;
   aspect-ratio: 1;
-  bottom: -16em;
-  left: -5em;
   z-index: -1;
 }
 
 .cta-message {
-  width: 70%;
-  margin-left: auto;
+  position: absolute;
+  top: 40%;
+  right: 0;
+  width: 60%;
   padding: 3.3rem;
 }
