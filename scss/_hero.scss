@@ -1,5 +1,12 @@
 @use './variables' as *;
 
+header {
+  background-image: url('../assets/images/bg-pattern-1.svg'),
+    url('../assets/images/bg-pattern-2.svg');
+  background-position: -13% 50%, 105% 50%;
+  background-repeat: no-repeat;
+}
+
 .hero {
   display: flex;
   position: relative;
@@ -8,10 +15,6 @@
   align-items: center;
   text-align: center;
   padding-block: 4rem;
-  background-image: url('../assets/images/bg-pattern-1.svg'),
-    url('../assets/images/bg-pattern-2.svg');
-  background-position: -13% 50%, 105% 50%;
-  background-repeat: no-repeat;
 
   h1 {
     max-width: 13ch;

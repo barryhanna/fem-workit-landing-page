@@ -62,9 +62,10 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
-  *::before,
-  *::after {
+*::before,
+*::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -80,11 +81,11 @@ select {
   src: url(./assets/fonts/manrope/Manrope-VariableFont_wght.ttf) format("truetype");
 }
 :root {
-  --purple: hsl(273, 85%, 13%);
-  --green: hsl(150, 100%, 63%);
-  --purple-light: hsl(271, 12%, 34%);
-  --purple-white: hsl(276, 100%, 99%);
-  --white: hsl(0, 0%, 100%);
+  --purple: #24053d;
+  --green: #42ffa1;
+  --purple-light: #574c61;
+  --purple-white: #fdfaff;
+  --white: white;
 }
 
 body {
@@ -125,7 +126,7 @@ footer {
 }
 
 header {
-  background-color: hsl(273, 85%, 13%);
+  background-color: #24053d;
   color: var(--white);
   clip-path: circle(120% at 50% -20%);
 }
@@ -146,6 +147,12 @@ nav ul {
   margin: 0;
 }
 
+header {
+  background-image: url("../assets/images/bg-pattern-1.svg"), url("../assets/images/bg-pattern-2.svg");
+  background-position: -13% 50%, 105% 50%;
+  background-repeat: no-repeat;
+}
+
 .hero {
   display: flex;
   position: relative;
@@ -154,9 +161,6 @@ nav ul {
   align-items: center;
   text-align: center;
   padding-block: 4rem;
-  background-image: url("../assets/images/bg-pattern-1.svg"), url("../assets/images/bg-pattern-2.svg");
-  background-position: -13% 50%, 105% 50%;
-  background-repeat: no-repeat;
 }
 .hero h1 {
   max-width: 13ch;
@@ -165,7 +169,7 @@ nav ul {
 .hero em {
   font-style: normal;
   text-decoration: underline;
-  text-decoration-color: hsl(150, 100%, 63%);
+  text-decoration-color: #42ffa1;
   text-decoration-thickness: 4px;
   text-underline-offset: 8px;
 }
@@ -180,16 +184,24 @@ nav ul {
 
 .features-list {
   display: flex;
-  position: relative;
+  flex-direction: column;
   justify-content: space-between;
   gap: 2em;
-  margin-top: 2em;
+  margin-top: 15em;
+  padding-right: 2em;
 }
 .features-list li::marker {
   content: "";
 }
 
+.features-list li {
+  position: relative;
+}
+
 .feature-item__counter {
+  position: static;
+  left: -5rem;
+  top: 50%;
   font-family: "Frances 144", serif;
   font-weight: bold;
   font-size: 1.625rem;
@@ -205,6 +217,24 @@ nav ul {
   margin-bottom: 1em;
 }
 
+@media only screen and (min-width: 600px) {
+  .features-list {
+    margin-left: 4em;
+  }
+
+  .feature-item__counter {
+    position: absolute;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .features-list {
+    flex-direction: row;
+  }
+
+  .feature-item__counter {
+    position: static;
+  }
+}
 a.btn {
   display: inline-block;
   padding: 0.5em 1em;
@@ -213,14 +243,14 @@ a.btn {
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 a.btn-primary {
-  background-color: hsl(150, 100%, 63%);
-  color: hsl(273, 85%, 13%);
-  border: 2px solid hsl(273, 85%, 13%);
+  background-color: #42ffa1;
+  color: #24053d;
+  border: 2px solid #24053d;
 }
 a.btn-primary:hover {
-  background-color: hsl(273, 85%, 13%);
-  color: hsl(150, 100%, 63%);
-  border-color: hsl(150, 100%, 63%);
+  background-color: #24053d;
+  color: #42ffa1;
+  border-color: #42ffa1;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 a.btn-secondary {
@@ -229,10 +259,10 @@ a.btn-secondary {
   border: 2px solid transparent;
   text-decoration: underline;
   text-underline-offset: 10px;
-  text-decoration-color: hsl(150, 100%, 63%);
+  text-decoration-color: #42ffa1;
 }
 a.btn-secondary:hover {
-  color: hsl(150, 100%, 63%);
+  color: #42ffa1;
   transition: color 250ms ease-in-out, background-color 250ms ease-in-out;
 }
 
@@ -253,6 +283,13 @@ a.btn-secondary:hover {
   right: 0;
   width: 60%;
   padding: 3.3rem;
+}
+
+.cta-decorative-img {
+  position: absolute;
+  top: 60%;
+  right: 10%;
+  z-index: 2;
 }
 
 .social-links {

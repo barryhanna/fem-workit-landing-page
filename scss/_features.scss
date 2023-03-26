@@ -2,10 +2,11 @@
 
 .features-list {
   display: flex;
-  position: relative;
+  flex-direction: column;
   justify-content: space-between;
   gap: 2em;
-  margin-top: 2em;
+  margin-top: 15em;
+  padding-right: 2em;
 
   li {
     &::marker {
@@ -14,7 +15,14 @@
   }
 }
 
+.features-list li {
+  position: relative;
+}
+
 .feature-item__counter {
+  position: static;
+  left: -5rem;
+  top: 50%;
   font-family: $ff-headings;
   font-weight: bold;
   font-size: 1.625rem;
@@ -28,4 +36,23 @@
   text-align: center;
   margin-inline: auto;
   margin-bottom: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  .features-list {
+    margin-left: 4em;
+  }
+  .feature-item__counter {
+    position: absolute;
+  }
+}
+
+@media only screen and (min-width: 800px) {
+  .features-list {
+    flex-direction: row;
+  }
+
+  .feature-item__counter {
+    position: static;
+  }
 }
