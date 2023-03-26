@@ -268,21 +268,45 @@ a.btn-secondary:hover {
 
 .cta .container {
   display: flex;
+  flex-direction: column;
   position: relative;
+}
+@media screen and (min-width: 800px) {
+  .cta .container {
+    flex-direction: row;
+  }
 }
 
 .cta-img {
-  width: 477px;
+  width: 510px;
+  padding: 2em;
   aspect-ratio: 1;
+  margin-bottom: -4em;
   z-index: -1;
+  margin-inline: auto;
+}
+@media screen and (min-width: 800px) {
+  .cta-img {
+    margin-inline: 0;
+  }
 }
 
 .cta-message {
-  position: absolute;
-  top: 40%;
-  right: 0;
-  width: 60%;
+  margin-inline: 2em;
   padding: 3.3rem;
+}
+.cta-message a {
+  display: block;
+  width: fit-content;
+  margin-inline: auto;
+}
+@media screen and (min-width: 800px) {
+  .cta-message {
+    position: absolute;
+    top: 40%;
+    right: 0;
+    width: 60%;
+  }
 }
 
 .cta-decorative-img {

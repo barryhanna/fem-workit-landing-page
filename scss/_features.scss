@@ -38,7 +38,7 @@
   margin-bottom: 1em;
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: $breakpoint-1) {
   .features-list {
     margin-left: 4em;
   }
@@ -47,7 +47,7 @@
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: $breakpoint-2) {
   .features-list {
     flex-direction: row;
   }
