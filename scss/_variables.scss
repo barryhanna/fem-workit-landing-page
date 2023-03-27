@@ -41,17 +41,17 @@ $clr-button-bg: #{map-get(
 
 $heading-fonts: (
   'large': (
-    'size': 5rem,
+    'size': clamp(3rem, 1rem + 5vw, 5rem),
     'weight': 500,
     'lineheight': 1,
   ),
   'medium': (
-    'size': 3.5rem,
+    'size': clamp(2rem, 1rem + 3vw, 3.5rem),
     'weight': 500,
     'lineheight': 1.14,
   ),
   'small': (
-    'size': 2rem,
+    'size': clamp(1rem, 1rem + 0.5vw, 2rem),
     'weight': 500,
     'lineheight': 1.25,
   ),

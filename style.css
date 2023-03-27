@@ -90,8 +90,9 @@ select {
 
 body {
   font-family: "Manrope", sans-serif;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 1rem + 5vw, 1.125rem);
   line-height: 1.7;
+  background-color: var(--purple-white);
 }
 
 h1,
@@ -102,19 +103,19 @@ h4 {
 }
 
 h1 {
-  font-size: 5rem;
+  font-size: clamp(3rem, 1rem + 5vw, 5rem);
   font-weight: 500;
   line-height: 1;
 }
 
 h2 {
-  font-size: 3.5rem;
+  font-size: clamp(2rem, 1rem + 3vw, 3.5rem);
   font-weight: 500;
   line-height: 1.14;
 }
 
 h3 {
-  font-size: 2rem;
+  font-size: clamp(1rem, 1rem + 0.5vw, 2rem);
   font-weight: 500;
   line-height: 1.25;
 }
@@ -128,7 +129,14 @@ footer {
 header {
   background-color: #24053d;
   color: var(--white);
-  clip-path: circle(120% at 50% -20%);
+}
+
+main {
+  background-color: var(--white);
+}
+
+.curve {
+  border-radius: 0 0 33% 33%;
 }
 
 .bg-dark {
@@ -140,6 +148,10 @@ header {
   background-color: var(--purple-white);
 }
 
+.bg-white {
+  background-color: var(--white);
+}
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -148,9 +160,7 @@ nav ul {
 }
 
 header {
-  background-image: url("../assets/images/bg-pattern-1.svg"), url("../assets/images/bg-pattern-2.svg");
-  background-position: -13% 50%, 105% 50%;
-  background-repeat: no-repeat;
+  background-image: none;
 }
 
 .hero {
@@ -180,6 +190,18 @@ header {
   transform: translateX(-50%);
   width: 50vh;
   z-index: 1;
+  margin-inline: 1em;
+}
+
+@media only screen and (min-width: 600px) {
+  header {
+    background-image: url("../assets/images/bg-pattern-1.svg"), url("../assets/images/bg-pattern-2.svg");
+    background-position: -13% 50%, 105% 50%;
+    background-repeat: no-repeat;
+  }
+}
+.features.curve {
+  overflow: hidden;
 }
 
 .features-list {
@@ -189,6 +211,7 @@ header {
   gap: 2em;
   margin-top: 15em;
   padding-right: 2em;
+  padding-bottom: 10rem;
 }
 .features-list li::marker {
   content: "";
@@ -282,7 +305,6 @@ a.btn-secondary:hover {
   padding: 2em;
   aspect-ratio: 1;
   margin-bottom: -4em;
-  z-index: -1;
   margin-inline: auto;
 }
 @media screen and (min-width: 800px) {
@@ -310,10 +332,16 @@ a.btn-secondary:hover {
 }
 
 .cta-decorative-img {
-  position: absolute;
-  top: 60%;
-  right: 10%;
-  z-index: 2;
+  display: none;
+}
+@media only screen and (min-width: 600px) {
+  .cta-decorative-img {
+    display: block;
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    z-index: 2;
+  }
 }
 
 .social-links {
@@ -324,6 +352,11 @@ a.btn-secondary:hover {
 .social-links > * {
   height: 20px;
   aspect-ratio: 1;
+}
+
+footer {
+  background-color: var(--white);
+  padding: 8em;
 }
 
 footer .container > * {

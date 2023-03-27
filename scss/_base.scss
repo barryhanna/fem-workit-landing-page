@@ -9,8 +9,9 @@
 
 body {
   font-family: $ff-body;
-  font-size: 1.125rem;
+  font-size: clamp(1rem, 1rem + 5vw, 1.125rem);
   line-height: 1.7;
+  background-color: var(--purple-white);
 }
 
 h1,
@@ -39,7 +40,14 @@ footer {
 header {
   background-color: $clr-hero-bg;
   color: var(--white);
-  clip-path: circle(120% at 50% -20%);
+}
+
+main {
+  background-color: var(--white);
+}
+
+.curve {
+  border-radius: 0 0 33% 33%;
 }
 
 .bg-dark {
@@ -49,4 +57,8 @@ header {
 
 .bg-light {
   background-color: var(--purple-white);
+}
+
+.bg-white {
+  background-color: var(--white);
 }

@@ -17,7 +17,6 @@
   padding: 2em;
   aspect-ratio: 1;
   margin-bottom: -4em;
-  z-index: -1;
   margin-inline: auto;
 
   @media screen and (min-width: $breakpoint-2) {
@@ -44,8 +43,13 @@
 }
 
 .cta-decorative-img {
-  position: absolute;
-  top: 60%;
-  right: 10%;
-  z-index: 2;
+  display: none;
+
+  @media only screen and (min-width: $breakpoint-1) {
+    display: block;
+    position: absolute;
+    top: 60%;
+    right: 10%;
+    z-index: 2;
+  }
 }

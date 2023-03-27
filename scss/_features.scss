@@ -1,5 +1,9 @@
 @use './variables' as *;
 
+.features.curve {
+  overflow: hidden;
+}
+
 .features-list {
   display: flex;
   flex-direction: column;
@@ -7,6 +11,7 @@
   gap: 2em;
   margin-top: 15em;
   padding-right: 2em;
+  padding-bottom: 10rem;
 
   li {
     &::marker {
