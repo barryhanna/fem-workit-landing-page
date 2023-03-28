@@ -136,7 +136,10 @@ main {
 }
 
 .curve {
-  border-radius: 0 0 33% 33%;
+  background-image: radial-gradient(150% 100% at 50% 10%, var(--purple) 90%, var(--purple-white) 90%);
+}
+.curve--light {
+  background-image: radial-gradient(150% 100% at 50% 10%, var(--purple-white) 90%, var(--white) 90%);
 }
 
 .bg-dark {
